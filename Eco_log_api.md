@@ -1,6 +1,6 @@
 # API 명세서
 
-Created: September 25, 2022 2:14 PM
+Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 
 # API Index
 
