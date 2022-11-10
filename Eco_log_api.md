@@ -427,9 +427,9 @@ Sample Code
 | --- | --- | --- |
 | postId | Integer | 조회하려는 게시물 ID |
 | userInfo | String | 게시물을 작성한 유저 정보 |
-|     userId | Integer | 유저 ID |
-|     userNickname | String | 유저 닉네임 |
-|     selfIntroduce | String | 유저 자기소개 |
+| &nbsp; userId | Integer | 유저 ID |
+| &nbsp; userNickname | String | 유저 닉네임 |
+| &nbsp; selfIntroduce | String | 유저 자기소개 |
 | customerBehaviorList | List | 유저가 직접 입력한 실천 |
 | behaviorList | List | 유저가 선택한 실천 |
 | comment | String | 오늘의 한마디 |
