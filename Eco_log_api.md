@@ -1,6 +1,6 @@
 # API 명세서
 
-Eco-log 서비스의 주요 API를 설명하는 문서입니다.
+Eco-log 서비스의 API를 설명하는 문서입니다.
 
 # API Index
 
@@ -11,6 +11,7 @@ Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 | 프로필 | GET /api/user/profile | 프로필(실천 현황) 조회 |
 |  | POST /api/user/profile | 프로필 수정 |
 |  | GET /api/user/summary | 유저 실천 정보 요약 조회 |
+|  | GET /api/user/search | 유저 검색 |
 | 게시물 | POST /api/post | 게시물 저장 |
 |  | PUT /api/post/change | 게시물 수정 |
 |  | DELETE /api/post | 게시물 삭제 |
@@ -18,6 +19,9 @@ Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 |  | GET /api/post/Monthly | 게시물 월 단위 조회 |
 | 실천 | GET /api/behavior | 전체 실천 ID 및 이름 조회 |
 | 팔로우 | POST /api/user/follow | 유저 팔로우 |
+|  | DELETE /api/user/follow | 유저 팔로우 취소 |
+|  | GET /api/user/follower | 팔로워 조회 |
+|  | GET /api/user/following | 팔로잉 조회 |
 | 게시물 하트 | POST /api/post/heart | 하트 선택 |
 |  | DELETE /api/post/heart | 하트 선택 취소 |
 
@@ -25,9 +29,17 @@ Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 
 ## 소셜 로그인(카카오)
 
+1. 하단의 주소에 접속해 Kakao 로그인을 진행합니다.
+
+| 항목 | URL |
+| --- | --- |
+| Kakao | `https://kauth.kakao.com/oauth/authorize?client_id=257ddabd02ec0d494551a5af563b1c9f&redirect_uri=http://localhost:3000/oauth&response_type=code` |
+
+2. 획득한 Auth 인증코드를 엔드포인트에 요청 파라미터로 입력합니다.
+
 | 메서드 | 엔드포인트 |
 | --- | --- |
-| GET | `/api/oauth/kakaotoken?code={인가코드}` |
+| GET | `/api/oauth/kakaotoken?code={인증코드}` |
 
 ### Request
 
@@ -35,7 +47,7 @@ Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| 인가코드 | 필수 | String |  |
+| 인증코드 | 필수 | String |  |
 
 ### Response
 
@@ -72,6 +84,8 @@ Eco-log 서비스의 주요 API를 설명하는 문서입니다.
 
 
 ## 로그인 중인 사용자 조회
+
+현재 서비스에 로그인한 사용자를 조회하는 API입니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
@@ -110,7 +124,7 @@ Sample Code
 
 ## 프로필 조회
 
-실천 현황 화면 조회 시 필요한 정보입니다.
+실천 현황 화면 조회 시 필요한 정보를 불러오는 API입니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
@@ -142,9 +156,9 @@ Sample Code
 | userPostTotalCount | String | 유저가 작성한 총 게시물 개수 |
 | selfIntroduce | String | 유저가 작성한 자기소개 |
 | userSummary | List | 유저 실천 정보 요약 |
-|     behaviorId | Integer | 실천 ID |
-|     name | String | 실천 이름 |
-|     count | Integer | 실천 횟수 |
+| &nbsp;&nbsp; behaviorId | Integer | 실천 ID |
+| &nbsp;&nbsp; name | String | 실천 이름 |
+| &nbsp;&nbsp; count | Integer | 실천 횟수 |
 | recentlyCustomBehaviorList | List | 타 유저 프로필 시 조회하는 최근 직접 입력 실천 3가지 |
 | public | Boolean | 프로필 공개 설정 여부 <br>  - `true`: 공개 <br>  - `false`: 비공개 |
 | myProfile | Boolean | 조회 중인 프로필의 본인 것 여부 <br>  - `true`: 본인 프로필 <br>  - `false`: 타 유저 프로필 |
@@ -171,7 +185,7 @@ Sample Code
 		},
 		],
 	"pubilc": true,
-	"myprofile": ture,
+	"myprofile": true,
 	"alreaydFollow": false
 }
 ```
@@ -194,7 +208,7 @@ Sample Code
 			"behaviorId": 21,
 			"name": "평소 목욕시간의 절반 달성",
 			"count": 2
-		},
+		}, //...
 		],
 	"recentlyCustomBehaviorList": [
 		"물티슈 아닌 행주 쓰기",
@@ -207,7 +221,25 @@ Sample Code
 }
 ```
 
+**Sample Code. 초기 상태의 본인 프로필 조회**
+
+```json
+{
+	"userId": 1,
+	"userNickName": "지구방위본부 사령관",
+	"userPostTotalCount": 0,
+	"selfIntroduce": "안녕하세요!",
+	"userSummary": [],
+	"recentlyCustomBehaviorList": [],
+	"pubilc": false,
+	"myprofile": true,
+	"alreaydFollow": false
+}
+```
+
 ## 프로필 수정
+
+유저의 프로필 정보를 수정할 수 있는 API입니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
@@ -228,7 +260,17 @@ Sample Code
 | --- | --- | --- | --- |
 | nickName | 필수 | String | 수정한 유저 닉네임 |
 | selfIntroduce | 필수 | String | 수정한 유저 자기소개 |
-| isPublic | 필수 | Boolean | 수정한 프로필 공개 여부값 <br>  - `true`: 공개 <br>  - `false`: 비공개 |
+| isPublic | 필수 | Integer | 수정한 프로필 공개 여부값 <br>  - `1`: 공개 <br>  - `0`: 비공개 |
+
+**Sample Code**
+
+```json
+{
+	"nickName": "냠냠냠킴",
+	"selfIntroduce": "자기소개 합니다.",
+	"isPublic": 0
+}
+```
 
 ### Response
 
@@ -240,11 +282,11 @@ Sample Code
 
 ## 유저 실천 정보 조회
 
-프로필 조회 API의 응답 필드 중 userSummary를 따로 조회할 수 있는 기능입니다.
+프로필 조회 API의 응답 필드 중 userSummary를 따로 조회할 수 있는 API입니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
-| GET | /api/user/summary |
+| GET | `/api/user/summary` |
 
 ### Request
 
@@ -290,9 +332,50 @@ Sample Code
 ]
 ```
 
+## 유저 검색
+
+| 메서드 | 엔드포인트 |
+| --- | --- |
+| GET | `/api/user/search?keyword={keyword}` |
+
+### Request
+
+**Request Parameters**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| keyword | 필수 | String | 검색할 유저 닉네임 또는 이메일 |
+
+**Request Header**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| key | 필수 | String | Authorization |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+
+### Response
+
+**Response Fields**
+
+실천 횟수 기준 내림차순으로 응답합니다.
+
+| 항목 | 타입 | 설명 |
+| --- | --- | --- |
+| userId | Integer | 유저 ID |
+| nickName | String | 유저 닉네임 |
+| selfIntroduce | String | 유저가 작성한 자기소개 |
+| userSummary | List | 유저 실천 정보 요약 |
+| &nbsp;&nbsp; behaviorId | Integer | 실천 ID |
+| &nbsp;&nbsp; name | String | 실천 이름 |
+| &nbsp;&nbsp; count | Integer | 실천 횟수 |
+| alreadyFollow | Boolean | 조회 중인 (타 유저) 프로필의 팔로우 여부 <br>  - `true`: 데이터 조회 시점 팔로우 중 <br>  - `false`: 팔로우하지 않음 |
+
+
 # 게시물
 
 ## 게시물 저장
+
+사용자가 작성한 게시물을 저장하는 API입니다. 특정 일자에 이미 발행한 게시물이 있을 경우, 400 에러 메시지를 반환합니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
@@ -337,6 +420,8 @@ Sample Code
 
 ## 게시물 수정
 
+게시물을 수정할 수 있는 API입니다.
+
 | 메서드 | 엔드포인트 |
 | --- | --- |
 | PUT | `/api/post/change` |
@@ -369,9 +454,11 @@ Sample Code
 
 ## 게시물 삭제
 
+게시물을 삭제할 수 있는 API입니다.
+
 | 메서드 | 엔드포인트 |
 | --- | --- |
-| DELETE | /api/post |
+| DELETE | `/api/post` |
 
 ### Request
 
@@ -398,7 +485,7 @@ Sample Code
 
 ## 피드 조회
 
-유저 및 팔로워의 일간 게시물을 조회할 수 있는 API입니다.
+특정 일자에 저장된 유저 및 팔로워의 일간 게시물을 조회할 수 있는 API입니다.
 
 | 메서드 | 엔드포인트 |
 | --- | --- |
@@ -427,9 +514,9 @@ Sample Code
 | --- | --- | --- |
 | postId | Integer | 조회하려는 게시물 ID |
 | userInfo | String | 게시물을 작성한 유저 정보 |
-| &nbsp; userId | Integer | 유저 ID |
-| &nbsp; userNickname | String | 유저 닉네임 |
-| &nbsp; selfIntroduce | String | 유저 자기소개 |
+| &nbsp;&nbsp; userId | Integer | 유저 ID |
+| &nbsp;&nbsp; userNickname | String | 유저 닉네임 |
+| &nbsp;&nbsp; selfIntroduce | String | 유저 자기소개 |
 | customerBehaviorList | List | 유저가 직접 입력한 실천 |
 | behaviorList | List | 유저가 선택한 실천 |
 | comment | String | 오늘의 한마디 |
@@ -539,6 +626,8 @@ Sample Code
 
 ## 유저 팔로우
 
+유저를 팔로우할 수 있는 API입니다.
+
 | 메서드 | 엔드포인트 |
 | --- | --- |
 | POST | `/api/user/follow` |
@@ -556,7 +645,7 @@ Sample Code
 
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| target | 필수 | Integer | 팔로우하려는 사용자 ID |
+| target | 필수 | Integer | 팔로우하려는 유저 ID |
 
 Sample Code
 
@@ -573,6 +662,97 @@ Sample Code
 | 항목 | 타입 | 설명 |
 | --- | --- | --- |
 |  |  | 요청 결과 |
+
+## 팔로우 취소
+
+유저 팔로우를 취소할 수 있는 API입니다.
+
+| 메서드 | 엔드포인트 |
+| --- | --- |
+| DELETE | `/api/user/follow` |
+
+### Request
+
+**Request Header**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| key | 필수 | String | Authorization |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+
+### Response
+
+**Request Body**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| target | 필수 | Integer | 팔로우를 취소할 유저 ID |
+
+## 팔로워 조회
+
+유저의 팔로워를 조회할 수 있는 API입니다.
+
+| 메서드 | 엔드포인트 |
+| --- | --- |
+| GET | `/api/user/follower` |
+
+### Request
+
+**Request Header**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| key | 필수 | String | Authorization |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+
+### Response
+
+**Respose Fields**
+
+| 항목 | 타입 | 설명 |
+| --- | --- | --- |
+| userId | Integer | 팔로워 ID |
+| userNickName | String | 팔로워 닉네임 |
+| selfIntroduce | String | 팔로워 자기소개 |
+
+## 팔로잉 조회
+
+유저를 팔로우하는 타 유저를 조회할 수 있는 API입니다.
+
+| 메서드 | 엔드포인트 |
+| --- | --- |
+| GET | `/api/user/following` |
+
+### Request
+
+**Request Header**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| key | 필수 | String | Authorization |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+
+### Response
+
+**Respose Fields**
+
+| 항목 | 타입 | 설명 |
+| --- | --- | --- |
+| userId | Integer | 팔로잉 유저 ID |
+| userNickName | String | 팔로잉 유저 닉네임 |
+| selfIntroduce | String | 팔로잉 유저 자기소개 |
+
+**Sample Code**
+
+```json
+[
+ {
+	 "userId": 2,
+	 "nickName"": "활기찬 활동가",
+	 "selfIntroduce": "간단한 자기소개글을 적어주세요!"
+ }
+]
+```
 
 # 게시물 하트
 
