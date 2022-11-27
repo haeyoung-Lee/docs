@@ -2,28 +2,28 @@
 
 Eco-log 서비스의 API를 설명하는 문서입니다.
 
-# API Index
+## API Quick Reference Table
 
-| 구분 | API 이름 | 설명 |
-| --- | --- | --- |
-| 로그인 | GET /api/oauth/kakaotoken | 카카오 소셜 로그인 |
-|  | GET /api/me | 현재 로그인 중인 유저 조회 |
-| 프로필 | GET /api/user/profile | 프로필(실천 현황) 조회 |
-|  | POST /api/user/profile | 프로필 수정 |
-|  | GET /api/user/summary | 유저 실천 정보 요약 조회 |
-|  | GET /api/user/search | 유저 검색 |
+| 구분 | 메서드 | API  | 설명 |
+| --- | --- | --- | --- |
+| 로그인 | GET | /api/oauth/kakaotoken | 카카오 소셜 로그인 |
+|  | GET | /api/me | 현재 로그인 중인 유저 조회 |
+| 프로필 | GET | /api/user/profile | 프로필(실천 현황) 조회 |
+|  | POST | /api/user/profile | 프로필 수정 |
+|  | GET | /api/user/summary | 유저 실천 정보 요약 조회 |
+|  | GET | /api/user/search | 유저 검색 |
 | 게시물 | POST /api/post | 게시물 저장 |
-|  | PUT /api/post/change | 게시물 수정 |
-|  | DELETE /api/post | 게시물 삭제 |
-|  | GET /api/post/daily | 피드 조회 |
-|  | GET /api/post/Monthly | 게시물 월 단위 조회 |
-| 실천 | GET /api/behavior | 전체 실천 ID 및 이름 조회 |
-| 팔로우 | POST /api/user/follow | 유저 팔로우 |
-|  | DELETE /api/user/follow | 유저 팔로우 취소 |
-|  | GET /api/user/follower | 팔로워 조회 |
-|  | GET /api/user/following | 팔로잉 조회 |
-| 게시물 하트 | POST /api/post/heart | 하트 선택 |
-|  | DELETE /api/post/heart | 하트 선택 취소 |
+|  | PUT | /api/post/change | 게시물 수정 |
+|  | DELETE | /api/post | 게시물 삭제 |
+|  | GET | /api/post/daily | 피드 조회 |
+|  | GET | /api/post/Monthly | 게시물 월 단위 조회 |
+| 실천 | GET | /api/behavior | 전체 실천 ID 및 이름 조회 |
+| 팔로우 | POST | /api/user/follow | 유저 팔로우 |
+|  | DELETE | /api/user/follow | 유저 팔로우 취소 |
+|  | GET | /api/user/follower | 팔로워 조회 |
+|  | GET | /api/user/following | 팔로잉 조회 |
+| 게시물 하트 | POST | /api/post/heart | 하트 선택 |
+|  | DELETE | /api/post/heart | 하트 선택 취소 |
 
 # 로그인
 
@@ -31,15 +31,15 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 
 1. 하단의 주소에 접속해 Kakao 로그인을 진행합니다.
 
-| 항목 | URL |
-| --- | --- |
-| Kakao | `https://kauth.kakao.com/oauth/authorize?client_id=257ddabd02ec0d494551a5af563b1c9f&redirect_uri=http://localhost:3000/oauth&response_type=code` |
+	| 항목 | URL |
+	| --- | --- |
+	| Kakao | `https://kauth.kakao.com/oauth/authorize?client_id=257ddabd02ec0d494551a5af563b1c9f&redirect_uri=http://localhost:3000/oauth&response_type=code` |
 
-2. 획득한 Auth 인증코드를 엔드포인트에 요청 파라미터로 입력합니다.
+2. 획득한 OAuth 인증코드를 엔드포인트에 요청 파라미터로 입력합니다.
 
-| 메서드 | 엔드포인트 |
-| --- | --- |
-| GET | `/api/oauth/kakaotoken?code={인증코드}` |
+	| 메서드 | 엔드포인트 |
+	| --- | --- |
+	| GET | `/api/oauth/kakaotoken?code={인증코드}` |
 
 ### Request
 
@@ -47,7 +47,7 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| 인증코드 | 필수 | String |  |
+| 인증코드 | 필수 | String | 획득한 OAuth 인증 코드 |
 
 ### Response
 
@@ -71,7 +71,7 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 
 - **Payload(참고)**
 
-    ### ****Response fields****
+    #### Response fields
 
     JWT의 payload에 해당합니다.
 
@@ -160,6 +160,8 @@ Sample Code
 | &nbsp;&nbsp; name | String | 실천 이름 |
 | &nbsp;&nbsp; count | Integer | 실천 횟수 |
 | recentlyCustomBehaviorList | List | 타 유저 프로필 시 조회하는 최근 직접 입력 실천 3가지 |
+| createAt | String | 유저 계정 생성일자 |
+| behaviorCount | Integer | 전체 게시물에 입력 총 실천 개수 <br> - 기본 실천 + 직접 입력 포함 |
 | public | Boolean | 프로필 공개 설정 여부 <br>  - `true`: 공개 <br>  - `false`: 비공개 |
 | myProfile | Boolean | 조회 중인 프로필의 본인 것 여부 <br>  - `true`: 본인 프로필 <br>  - `false`: 타 유저 프로필 |
 | alreadyFollow | Boolean | 조회 중인 (타 유저) 프로필의 팔로우 여부 <br>  - `true`: 데이터 조회 시점 팔로우 중 <br>  - `false`: 팔로우하지 않음 |
@@ -184,6 +186,13 @@ Sample Code
 			"count": 2
 		},
 		],
+	"recentlyCustomBehaviorList": [
+			"물티슈 아닌 행주 쓰기",
+			"평소보다 샴푸 덜 쓰기",
+			"대중 교통 대신 자전거 타기"
+	],
+	"createAt": "2022-11-11",
+	"behaviorCount": 6,
 	"pubilc": true,
 	"myprofile": true,
 	"alreaydFollow": false
@@ -215,13 +224,15 @@ Sample Code
 		"평소보다 샴푸 덜 쓰기",
 		"대중 교통 대신 자전거 타기"
 	],
+	"createAt": "2022-11-11",
+	"behaviorCount": 6,
 	"pubilc": true,
 	"myprofile": false,
 	"alreaydFollow": false
 }
 ```
 
-**Sample Code. 초기 상태의 본인 프로필 조회**
+**Sample Code. 생성 직후 초기 상태의 프로필 조회**
 
 ```json
 {
@@ -231,6 +242,8 @@ Sample Code
 	"selfIntroduce": "안녕하세요!",
 	"userSummary": [],
 	"recentlyCustomBehaviorList": [],
+	"createAt": "2022-11-11",
+	"behaviorCount": 0,
 	"pubilc": false,
 	"myprofile": true,
 	"alreaydFollow": false
@@ -417,6 +430,14 @@ Sample Code
 | 항목 | 타입 | 설명 |
 | --- | --- | --- |
 |    |  | 저장된 게시물의 ID |
+
+**Error Code. 게시물을 이미 발행한 경우**
+
+```json
+{
+	"message": "해당 날짜에 이미 게시물이 있습니다."
+}
+```
 
 ## 게시물 수정
 
