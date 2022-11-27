@@ -12,7 +12,7 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 |  | POST | /api/user/profile | 프로필 수정 |
 |  | GET | /api/user/summary | 유저 실천 정보 요약 조회 |
 |  | GET | /api/user/search | 유저 검색 |
-| 게시물 | POST /api/post | 게시물 저장 |
+| 게시물 | POST | /api/post | 게시물 저장 |
 |  | PUT | /api/post/change | 게시물 수정 |
 |  | DELETE | /api/post | 게시물 삭제 |
 |  | GET | /api/post/daily | 피드 조회 |
