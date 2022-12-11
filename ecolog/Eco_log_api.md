@@ -98,7 +98,7 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization으로 고정 |
-| value | 필수 | String | 로그인 시 획득한 JWT 토큰 <br> - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 획득한 JWT 토큰 <br> - ex. Bearer {토큰} |
 
 ### ****Response****
 
@@ -143,7 +143,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -265,7 +265,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -308,7 +308,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -364,7 +364,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -401,7 +401,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -466,7 +466,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -500,7 +500,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -537,7 +537,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -607,7 +607,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -644,7 +644,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -672,7 +672,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -711,7 +711,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -736,7 +736,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -763,7 +763,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 ### Response
 
@@ -804,7 +804,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
@@ -835,7 +835,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. `Bearer {토큰}` |
+| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
 
 **Request Body**
 
