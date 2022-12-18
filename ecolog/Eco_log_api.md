@@ -1,4 +1,4 @@
-# API 명세서
+badgeAchieveList# API 명세서
 
 Eco-log 서비스의 API를 설명하는 문서입니다.
 
@@ -6,24 +6,25 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 
 | 구분 | 메서드 | API  | 설명 |
 | --- | --- | --- | --- |
-| 로그인 | GET | /api/oauth/kakaotoken | 카카오 소셜 로그인 |
-|  | GET | /api/me | 현재 로그인 중인 유저 조회 |
-| 프로필 | GET | /api/user/profile | 프로필(실천 현황) 조회 |
-|  | POST | /api/user/profile | 프로필 수정 |
-|  | GET | /api/user/summary | 유저 실천 정보 요약 조회 |
-|  | GET | /api/user/search | 유저 검색 |
-| 게시물 | POST | /api/post | 게시물 저장 |
-|  | PUT | /api/post/change | 게시물 수정 |
-|  | DELETE | /api/post | 게시물 삭제 |
-|  | GET | /api/post/daily | 피드 조회 |
-|  | GET | /api/post/Monthly | 게시물 월 단위 조회 |
-| 실천 | GET | /api/behavior | 전체 실천 ID 및 이름 조회 |
-| 팔로우 | POST | /api/user/follow | 유저 팔로우 |
-|  | DELETE | /api/user/follow | 유저 팔로우 취소 |
-|  | GET | /api/user/follower | 팔로워 조회 |
-|  | GET | /api/user/following | 팔로잉 조회 |
-| 게시물 하트 | POST | /api/post/heart | 하트 선택 |
-|  | DELETE | /api/post/heart | 하트 선택 취소 |
+| 로그인 | GET | [/api/oauth/kakaotoken](#소셜-로그인카카오) | 카카오 소셜 로그인 |
+|  | GET | [/api/me](#로그인-중인-사용자-조회) | 현재 로그인 중인 유저 조회 |
+| 프로필 | GET | [/api/user/profile](#프로필-조회) | 프로필(실천 현황) 조회 |
+|  | POST | [/api/user/profile](#프로필-수정) | 프로필 수정 |
+|  | GET | [/api/user/summary](#유저-실천-정보-조회) | 유저 실천 정보 요약 조회 |
+|  | GET | [/api/user/search](#유저-검색) | 유저 검색 |
+| 게시물 | POST | [/api/post](#게시물-저장) | 게시물 저장 |
+|  | PUT | [/api/post/change](#게시물-수정) | 게시물 수정 |
+|  | DELETE | [/api/post](#게시물-삭제) | 게시물 삭제 |
+|  | GET | [/api/post/daily](#피드-조회) | 피드 조회 |
+|  | GET | [/api/post/Monthly](#게시물-월-단위-조회) | 게시물 월 단위 조회 |
+| 실천 | GET | [/api/behavior](#실천-조회) | 전체 실천 ID 및 이름 조회 |
+| 팔로우 | POST | [/api/user/follow](#유저-팔로우) | 유저 팔로우 |
+|  | DELETE | [/api/user/follow](#팔로우-취소) | 유저 팔로우 취소 |
+|  | GET | [/api/user/follower](#팔로워-조회) | 팔로워 조회 |
+|  | GET | [/api/user/following](#팔로잉-조회) | 팔로잉 조회 |
+| 게시물 하트 | POST | [/api/post/heart](#하트-활성화) | 하트 활성화 |
+|  | DELETE | [/api/post/heart](#하트-비활성화) | 하트 활성화 취소 |
+| 뱃지 | GET | [/api/user/badge](#뱃지-조회) | 유저 뱃지 획득 정보 조회 |
 
 # 로그인
 
@@ -98,9 +99,9 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization으로 고정 |
-| value | 필수 | String | 로그인 시 획득한 JWT 토큰 <br> - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 획득한 JWT 토큰 <br> - `ex. Bearer {토큰}` |
 
-### ****Response****
+### Response
 
 **Respose Fields**
 
@@ -110,7 +111,7 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 | nickName | String | 유저 닉네임 |
 | email | String | 유저 가입 이메일 |
 
-Sample Code
+**Sample Code**
 
 ```json
 {
@@ -143,7 +144,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -265,7 +266,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -308,7 +309,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -364,7 +365,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -401,7 +402,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -430,14 +431,14 @@ Sample Code
 | 항목 | 타입 | 설명 |
 | --- | --- | --- |
 | PostId | Integer | 저장된 게시물의 ID |
-| badgeAcheiveList | List | 유저가 획득한 뱃지 번호 |
+| badgeAchieveList | List | 게시물 발행 시점 유저가 획득한 뱃지 정보<br>- 각 뱃지를 번호로 맵핑함<br>- `0`: 작심삼일이 모이면<br>- `1`: 꾸준함의 재능<br>- `2`: 왕발자국<br>- `3`: 실천가<br>- `4`: 제로웨이스트 고수<br>- `5`: 나만의 실천<br>- `6`: 웰컴 백<br>- `7`: 함께 갈 동료<br>- `8`: 작은 마음<br>- `9`: 치어 업 |
 
-**Sample Code**
+**Sample Code. 게시물 저장 성공한 경우**
 
 ```json
 {
 	"postId": 2,
-	"badgeAcheiveList": [
+	"badgeAchieveList": [
 		5
 	]
 }
@@ -466,7 +467,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -500,7 +501,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -537,7 +538,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -607,7 +608,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -644,7 +645,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -672,7 +673,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -680,7 +681,7 @@ Sample Code
 | --- | --- | --- | --- |
 | target | 필수 | Integer | 팔로우하려는 유저 ID |
 
-Sample Code
+**Sample Code**
 
 ```json
 {
@@ -694,7 +695,20 @@ Sample Code
 
 | 항목 | 타입 | 설명 |
 | --- | --- | --- |
-|  |  | 요청 결과 |
+| message | String | 요청 결과 |
+| badgeAchieveList | List | 팔로우 시점에 유저가 획득한 뱃지 정보<br> - `7`: 함께 갈 동료 |
+
+**Sample code**
+
+``` json
+{
+	"message": "Follow{fromUser=2, toUser=1팔로우 관계를 시작합니다)",
+	"badgeAchieveList": [
+		7
+	]
+}
+
+```
 
 ## 팔로우 취소
 
@@ -711,7 +725,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - ``ex. Bearer {토큰}`` |
 
 ### Response
 
@@ -736,7 +750,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -763,7 +777,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 ### Response
 
@@ -804,7 +818,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -835,7 +849,7 @@ Sample Code
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | key | 필수 | String | Authorization |
-| value | 필수 | String | 로그인 시 JWT <br>  - ex. Bearer {토큰} |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
 
 **Request Body**
 
@@ -850,3 +864,44 @@ Sample Code
 | 항목 | 타입 | 설명 |
 | --- | --- | --- |
 |  |  | 요청 결과 |
+
+# 뱃지
+
+## 뱃지 조회
+
+유저가 획득한 뱃지를 조회할 수 있는 API입니다.
+
+| 메서드 | 엔드포인트 |
+| --- | --- |
+| GET | `/api/user/badge` |
+
+### Request
+
+**Request Header**
+
+| 항목 | 필수 여부 | 타입 | 설명 |
+| --- | --- | --- | --- |
+| key | 필수 | String | Authorization |
+| value | 필수 | String | 로그인 시 JWT <br>  - `ex. Bearer {토큰}` |
+
+### Response
+
+**Response Fields**
+
+| 항목 | 타입 | 설명 |
+| --- | --- | --- |
+| userId | Integer | 유저 아이디 |
+| badgeStateList | List | 유저가 획득한 뱃지 정보<br>- 각 뱃지를 번호로 맵핑함<br>- `0`: 작심삼일이 모이면<br>- `1`: 꾸준함의 재능<br>- `2`: 왕발자국<br>- `3`: 실천가<br>- `4`: 제로웨이스트 고수<br>- `5`: 나만의 실천<br>- `6`: 웰컴 백<br>- `7`: 함께 갈 동료<br>- `8`: 작은 마음<br>- `9`: 치어 업 |
+
+**Sample Code**
+
+```json
+{
+	"userId": 2,
+	"badgeStateList": [
+		"0",
+		"1",
+		"5"
+	]
+}
+```
