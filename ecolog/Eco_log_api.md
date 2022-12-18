@@ -1,4 +1,4 @@
-badgeAchieveList# API 명세서
+# API 명세서
 
 Eco-log 서비스의 API를 설명하는 문서입니다.
 
