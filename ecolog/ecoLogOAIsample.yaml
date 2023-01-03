@@ -1,0 +1,67 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: eco_log api
+  description: API of Web-Application EcoLog
+  contact:
+    name: Team Ecolog
+    email: apiteam@swagger.io
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/user/profile:
+    get:
+      description: 실천 현황 화면 조회 시 필요한 정보를 불러오는 API
+      operationId: showUserProfile
+      parameters:
+        - name: targetId
+          in: path
+          description: 프로필을 조회하려는 유저 ID
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: header
+          description: Authorization
+          required: true
+          schema:
+            type: string
+        - name: value
+          in: header
+          description: 로그인 시 JWT <br> - ex. Bearer {토큰}
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: user profile
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: integer
+                    description: 유저 ID
+                  userNickName:
+                    type: string
+                    description: 유저 닉네임
+                  userPostTotalCount:
+                    type: string
+                    description: 유저가 작성한 총 게시물 개수
+                  selfIntroduce:
+                    type: string
+                    description: 유저가 작성한 자기소개
+                  userSummary:
+                    type: array
+                    items:
+                      behaviorId:
+                        type: integer
+                        description: 실천 ID
+                      name:
+                        type: string
+                        description: 실천 이름
+                      count:
+                        type: integer
+                        description: 실천 횟수
+                    description: 유저 실천 정보 요약

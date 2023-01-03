@@ -679,13 +679,13 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
-| target | 필수 | Integer | 팔로우하려는 유저 ID |
+| targetId | 필수 | Integer | 팔로우하려는 유저 ID |
 
 **Sample Code**
 
 ```json
 {
-	"target": "1"
+	"targetId": "1"
 }
 ```
 
