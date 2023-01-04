@@ -727,13 +727,17 @@ Eco-log 서비스의 API를 설명하는 문서입니다.
 | key | 필수 | String | Authorization |
 | value | 필수 | String | 로그인 시 JWT <br>  - ``ex. Bearer {토큰}`` |
 
-### Response
-
 **Request Body**
 
 | 항목 | 필수 여부 | 타입 | 설명 |
 | --- | --- | --- | --- |
 | target | 필수 | Integer | 팔로우를 취소할 유저 ID |
+
+### Response
+
+| 항목 | 타입 | 설명 |
+| --- | --- | --- |
+|  |  | 팔로우 취소 안내 |
 
 ## 팔로워 조회
 
