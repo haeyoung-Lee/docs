@@ -1,8 +1,6 @@
 # Table of contents
 
-* [Welcome!](README.md)
-* [EcoLog API 개요](ecolog-api.md)
-* [Error](error.md)
+* [EcoLog API 개요](README.md)
 
 ## Reference
 

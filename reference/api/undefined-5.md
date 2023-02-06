@@ -29,6 +29,14 @@ Authorization
 {% swagger-response status="200: OK" description="요청 결과" %}
 
 {% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="동일한 유저가 하트 재선택" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 ## 하트 비활성화
