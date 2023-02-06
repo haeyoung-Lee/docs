@@ -1,16 +1,16 @@
 # API 레퍼런스
 
-Dive into the specifics of each API endpoint by checking out our complete documentation.
-
 ## 로그인
 
-All the methods associated with `CRUD`ing some pets. Which isn't as weird as it sounds:
+소셜 로그인, 유저 탈퇴 등 유저 계정 관리를 위한 API입니다.
 
 {% content-ref url="undefined.md" %}
 [undefined.md](undefined.md)
 {% endcontent-ref %}
 
 ## 프로필
+
+프로필 화면에 필요한 정보를 조회하는 API입니다.
 
 {% content-ref url="undefined-1.md" %}
 [undefined-1.md](undefined-1.md)
@@ -26,6 +26,8 @@ All the methods associated with `CRUD`ing some pets. Which isn't as weird as it 
 
 ## 실천
 
+전체 실천 카테고리를 조회하는 API입니다.
+
 {% content-ref url="undefined-3.md" %}
 [undefined-3.md](undefined-3.md)
 {% endcontent-ref %}
@@ -40,11 +42,15 @@ All the methods associated with `CRUD`ing some pets. Which isn't as weird as it 
 
 ## 게시물 하트
 
+유저가 게시물에 하트를 누르는 액션과 관련된 API입니다.
+
 {% content-ref url="undefined-5.md" %}
 [undefined-5.md](undefined-5.md)
 {% endcontent-ref %}
 
 ## 뱃지
+
+유저의 뱃지를 조회하는 API입니다.
 
 {% content-ref url="undefined-6.md" %}
 [undefined-6.md](undefined-6.md)
