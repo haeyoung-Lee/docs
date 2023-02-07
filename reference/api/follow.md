@@ -1,6 +1,6 @@
 # 팔로우
 
-## 유저 팔로우
+## 유저 팔로우 <a href="#add" id="add"></a>
 
 {% swagger method="post" path="/api/user/follow" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저를 팔로우할 수 있는 API" %}
 {% swagger-description %}
@@ -48,7 +48,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 팔로우 취소
+## 팔로우 취소 <a href="#unfollow" id="unfollow"></a>
 
 {% swagger method="delete" path="/api/user/follow" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저 팔로우를 취소할 수 있는 API" %}
 {% swagger-description %}
@@ -79,7 +79,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 팔로워 조회
+## 팔로워 조회 <a href="#follower" id="follower"></a>
 
 {% swagger method="get" path="/api/user/follower" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저의 팔로워를 조회할 수 있는 API" %}
 {% swagger-description %}
@@ -114,7 +114,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 팔로잉 조회
+## 팔로잉 조회 <a href="#following" id="following"></a>
 
 {% swagger method="get" path="/api/user/following" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저를 팔로우하는 타 유저를 조회할 수 있는 API" %}
 {% swagger-description %}
@@ -159,7 +159,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 팔로워 삭제
+## 팔로워 삭제 <a href="#view" id="view"></a>
 
 {% swagger method="delete" path="/api/user/follower" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저의 팔로워를 삭제하는 API" %}
 {% swagger-description %}

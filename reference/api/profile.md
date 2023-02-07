@@ -1,6 +1,6 @@
 # 프로필
 
-## 프로필 조회
+## 프로필 조회 <a href="#view" id="view"></a>
 
 {% swagger method="get" path="/api/user/profile?target={targetId}" baseUrl="https://www.eco-log-backend.kro.kr" summary="실천 현황 화면 조회 시 필요한 정보를 불러오는 API" %}
 {% swagger-description %}
@@ -140,7 +140,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 프로필 수정
+## 프로필 수정 <a href="#edit" id="edit"></a>
 
 {% swagger method="post" path="/api/user/profile" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저의 프로필 정보를 수정할 수 있는 API" %}
 {% swagger-description %}
@@ -196,7 +196,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 유저 실천 정보 요약 조회
+## 유저 실천 정보 요약 조회 <a href="#summary" id="summary"></a>
 
 {% swagger method="get" path="/api/user/summary" baseUrl="https://www.eco-log-backend.kro.kr" summary="프로필 조회 API의 응답 필드 중 userSummary를 따로 조회할 수 있는 API" %}
 {% swagger-description %}
@@ -252,7 +252,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 유저 검색
+## 유저 검색 <a href="#search" id="search"></a>
 
 {% swagger method="get" path="/api/user/search?keyword={keyword}" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저의 프로필 정보를 수정할 수 있는 API" %}
 {% swagger-description %}

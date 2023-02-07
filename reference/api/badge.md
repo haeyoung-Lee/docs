@@ -1,6 +1,6 @@
 # 뱃지
 
-## 뱃지 조회
+## 뱃지 조회 <a href="#view" id="view"></a>
 
 {% swagger method="get" path="/api/user/badge" baseUrl="https://www.eco-log-backend.kro.kr" summary="유저가 획득한 뱃지 현황을 조회하는 API" expanded="true" %}
 {% swagger-description %}

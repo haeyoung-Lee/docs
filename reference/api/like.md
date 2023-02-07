@@ -1,6 +1,6 @@
 # 게시물 하트
 
-## 하트 활성화
+## 하트 활성화 <a href="#active" id="active"></a>
 
 {% swagger method="post" path="/api/post/heart" baseUrl="https://www.eco-log-backend.kro.kr" summary="게시물에 좋아요를 누를 수 있는 API" %}
 {% swagger-description %}
@@ -30,7 +30,7 @@ Authorization
 
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="동일한 유저가 하트 재선택" %}
+{% swagger-response status="400: Bad Request" description="요청 반복 시 오류" %}
 ```javascript
 {
     // Response
@@ -39,7 +39,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 하트 비활성화
+## 하트 비활성화 <a href="#unactive" id="unactive"></a>
 
 {% swagger method="delete" path="/api/post/heart" baseUrl="https://www.eco-log-backend.kro.kr" summary="게시물에 눌렀던 좋아요를 취소하는 API" %}
 {% swagger-description %}

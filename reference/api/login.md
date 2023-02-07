@@ -1,6 +1,6 @@
 # 로그인
 
-## 소셜 로그인
+## 소셜 로그인 <a href="#login" id="login"></a>
 
 플랫폼 별 소셜 로그인 시 파라미터로 입력할 인증코드를 획득하는 방법은 다음과 같습니다.
 
@@ -26,7 +26,7 @@
 {% endtab %}
 {% endtabs %}
 
-### 카카오
+### 카카오 <a href="#kakao" id="kakao"></a>
 
 {% swagger method="get" path="/api/oauth/kakaotoken?code={인증코드}" baseUrl="https://www.eco-log-backend.kro.kr" summary="카카오 소셜 로그인 API" %}
 {% swagger-description %}
@@ -50,7 +50,7 @@
 {% endswagger-response %}
 {% endswagger %}
 
-### 네이버
+### 네이버 <a href="#naver" id="naver"></a>
 
 {% swagger method="get" path="/api/oauth/navertoken?code={코드값}&state={state값}" baseUrl="https://www.eco-log-backend.kro.kr" summary="네이버 소셜 로그인 API" %}
 {% swagger-description %}
@@ -85,7 +85,7 @@
 {% endswagger-response %}
 {% endswagger %}
 
-### 구글
+### 구글 <a href="#google" id="google"></a>
 
 {% swagger method="get" path="/api/oauth/googletoken?={인증코드}" baseUrl="https://www.eco-log-backend.kro.kr" summary="구글 소셜 로그인 API " %}
 {% swagger-description %}
@@ -105,7 +105,7 @@
 {% endswagger-response %}
 {% endswagger %}
 
-## 로그인 중인 사용자 조회
+## 로그인 중인 사용자 조회 <a href="#loginuser" id="loginuser"></a>
 
 {% swagger method="get" path="/api/me" baseUrl="https://www.eco-log-backend.kro.kr" summary="현재 서비스에 로그인한 사용자를 조회하는 API" %}
 {% swagger-description %}
@@ -148,12 +148,26 @@ Authorization으로 고정
 {% endswagger-response %}
 {% endswagger %}
 
-## 사용자 탈퇴
+## 사용자 탈퇴 <a href="#withdraw" id="withdraw"></a>
 
-{% swagger method="delete" path=" /api/user" baseUrl="https://www.eco-log-backend.kro.kr" summary="사용자 탈퇴 API" %}
+{% swagger method="delete" path=" /api/user?platform={플랫폼}" baseUrl="https://www.eco-log-backend.kro.kr" summary="사용자 탈퇴 API" %}
 {% swagger-description %}
 
 {% endswagger-description %}
+
+{% swagger-parameter in="path" name="플랫폼" required="true" %}
+`kakao`
+
+, 
+
+`naver`
+
+, 
+
+`google`
+
+ 중 입력
+{% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
 ```javascript

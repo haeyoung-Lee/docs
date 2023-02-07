@@ -1,6 +1,6 @@
 # 게시물
 
-## 게시물 저장
+## 게시물 저장 <a href="#save" id="save"></a>
 
 {% swagger method="post" path="/api/post" baseUrl="https://www.eco-log-backend.kro.kr" summary="사용자가 작성한 게시물을 저장하는 API" %}
 {% swagger-description %}
@@ -71,7 +71,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 게시물 수정
+## 게시물 수정 <a href="#edit" id="edit"></a>
 
 {% swagger method="put" path="/api/post/change" baseUrl="https://www.eco-log-backend.kro.kr" summary="게시물을 수정할 수 있는 API" %}
 {% swagger-description %}
@@ -114,7 +114,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 게시물 삭제
+## 게시물 삭제 <a href="#delete" id="delete"></a>
 
 {% swagger method="delete" path="/api/post" baseUrl="https://www.eco-log-backend.kro.kr" summary="게시물을 삭제할 수 있는 API" %}
 {% swagger-description %}
@@ -145,7 +145,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 피드 조회
+## 피드 조회 <a href="#feed" id="feed"></a>
 
 {% swagger method="get" path="/api/post/daily?={day}" baseUrl="https://www.eco-log-backend.kro.kr" summary="특정 일자에 저장된 유저 및 팔로워의 일간 게시물을 조회할 수 있는 API" %}
 {% swagger-description %}
@@ -219,7 +219,7 @@ Authorization
 {% endswagger-response %}
 {% endswagger %}
 
-## 게시물 월 단위 조회
+## 게시물 월 단위 조회 <a href="#monthly" id="monthly"></a>
 
 {% swagger method="get" path="/api/post/Monthly?month={month}" baseUrl="https://www.eco-log-backend.kro.kr" summary="피드 캘린더에 기록 표시바 마킹을 위해 월 단위 게시물을 조회할 수 있는 API" %}
 {% swagger-description %}

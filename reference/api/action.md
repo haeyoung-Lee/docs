@@ -1,6 +1,6 @@
 # 실천
 
-## 실천 조회
+## 실천 조회 <a href="#view" id="view"></a>
 
 {% swagger method="post" path="/api/behavior" baseUrl="https://www.eco-log-backend.kro.kr" summary="전체 실천의 이름과 ID를 조회할 수 있는 API" %}
 {% swagger-description %}
