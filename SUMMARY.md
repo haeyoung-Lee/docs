@@ -1,6 +1,7 @@
 # Table of contents
 
 * [EcoLog API 개요](README.md)
+* [시작하기](start.md)
 
 ## Reference
 

@@ -8,7 +8,7 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="key" type="String" required="true" %}
-Authorization
+`Authorization`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="value" type="String" required="true" %}

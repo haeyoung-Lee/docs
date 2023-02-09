@@ -113,7 +113,9 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="key" type="String" required="true" %}
-Authorization으로 고정
+`Authorization`
+
+으로 고정
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="value" type="String" required="true" %}
@@ -167,6 +169,23 @@ Authorization으로 고정
 `google`
 
  중 입력
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="key" required="true" %}
+`Authorization`
+
+으로 고정
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="value" required="true" %}
+로그인 시 획득한 JWT 토큰
+
+\
+
+
+\- ex. 
+
+`Bearer {토큰}`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
