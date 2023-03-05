@@ -34,6 +34,8 @@
 
 ##  Kakao i Cloud 사용자 가이드 개선 프로젝트
 
+![Kakao i Cloud 사용자 가이드](./img_portfolio/kic_console.png)
+
 ### 프로세스
 
 ```mermaid
