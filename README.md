@@ -32,6 +32,7 @@
 
 # Project
 
+
 ##  Kakao i Cloud 사용자 가이드 개선 프로젝트
 
 ![Kakao i Cloud 사용자 가이드](./img_portfolio/kic_console.png)
@@ -60,7 +61,10 @@ D(2차 리라이팅)-->E(배포)
 * 스타일가이드에 따른 스타일 일관성 적용(이미지, UI 표기 등)
 * [Kakao i Cloud 사용자 가이드 바로가기](https://console.kakaoi.io/docs/)
 
+
 ## Kakao i Web Chatbot SDK 가이드
+
+![Kakao i Web Chatbot SDK 가이드](./img_portfolio/web_chatbot.png)
 
 ### 프로세스
 
@@ -85,8 +89,10 @@ D(2차 리라이팅)-->E(배포)
 * 문서 릴리즈 노트 관리
 * [Kakao i Web Chatbot SDK 가이드 바로가기](https://docs.kakaoi.ai/kakao_i_web_chatbot_sdk/)
 
+
 ## KakaoEnterprise Style Guide
 
+![KakaoEnterprise Style Guide](img_portfolio/styleguide.png)
 
 ### 프로세스
 
@@ -109,7 +115,10 @@ D(피어 리뷰)-->E(배포)
 * 흩어져있던 내부 스타일 관련 자료를 통합하여 가이드 유지・관리 용이
 * 문서 초안의 통일성 확보로 업무 효율성 증가
 
+
 ## Kakao i Cloud 사용자 가이드 사용성 평가 보고서
+
+![KakaoEnterprise Style Guide](img_portfolio/userability.png)
 
 ### 프로세스
 
@@ -128,6 +137,7 @@ C(피어 리뷰)-->D(2차 작성 및 전달)
 
 * Kakao i Cloud 사용자 가이드 개선에 앞서 현재 문서의 문제점을 살펴보고 개선 방향을 논의하기 위한 보고서
 * 기술문서 4대 요소(정확성, 명확성, 간결성, 일관성)와 ‘디자인’을 평가 기준으로 체크리스트를 작성 후, 콘솔에서 직접 테스트하며 사용성 저해 사례 발견
+
 
 ## `Side Project` Eco Log API 명세서
 
