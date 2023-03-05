@@ -119,7 +119,7 @@ D(2차 리라이팅)-->E(배포)
 
 ## KakaoEnterprise Style Guide
 
-![KakaoEnterprise Style Guide](img_portfolio/styleguide.png)
+![KakaoEnterprise Style Guide](./img_portfolio/styleguide_blur.png)
 
 ### 프로세스
 
@@ -145,7 +145,7 @@ D(피어 리뷰)-->E(배포)
 
 ## Kakao i Cloud 사용자 가이드 사용성 평가 보고서
 
-![KakaoEnterprise Style Guide](img_portfolio/userability.png)
+![KakaoEnterprise Style Guide](./img_portfolio/userability_blur.png)
 
 ### 프로세스
 
