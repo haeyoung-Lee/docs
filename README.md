@@ -38,7 +38,8 @@
 </div>
 
 * 디자인
-<div style="margin: 30px">
+&nbsp;&nbsp;&nbsp;
+<div>
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white" />
 	<img src="https://img.shields.io/badge/Adobe InDesign-FF3366?style=flat&logo=Adobe InDesign&logoColor=white" />
 </div>
