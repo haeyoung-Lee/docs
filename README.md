@@ -25,12 +25,14 @@
 
 * 협업
 <div style="margin-right: 30px;">
-	&nbsp;&nbsp;<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white" />
+	&nbsp;&nbsp;&nbsp;
+	<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white" />
 	<img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=Slack&logoColor=white" />
 </div>
 
 * 문서
-<div style="margin: 30px">
+<div>
+	&nbsp;&nbsp;&nbsp;
 	<img src="https://img.shields.io/badge/Markdown-000000?style=flat&logo=Markdown&logoColor=white" />
 	<img src="https://img.shields.io/badge/Gitbook-3884FF?style=flat&logo=Gitbook&logoColor=white" />
 	<img src="https://img.shields.io/badge/Google Docs-4285F4?style=flat&logo=Google Docs&logoColor=white" />
@@ -38,14 +40,15 @@
 </div>
 
 * 디자인
-&nbsp;&nbsp;&nbsp;
 <div>
+	&nbsp;&nbsp;&nbsp;
 	<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white" />
 	<img src="https://img.shields.io/badge/Adobe InDesign-FF3366?style=flat&logo=Adobe InDesign&logoColor=white" />
 </div>
 
 * 프로그래밍
-<div style="margin: 30px">
+<div>
+	&nbsp;&nbsp;&nbsp;
 	<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" />
 	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
@@ -53,7 +56,8 @@
 </div>
 
 * 데이터
-<div style="margin: 30px">
+<div>
+	&nbsp;&nbsp;&nbsp;
 	<img src="https://img.shields.io/badge/Google Analytics-E37400?style=flat&logo=Google Analytics&logoColor=white" />
 </div>
 
